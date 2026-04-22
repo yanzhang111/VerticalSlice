@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyBrain : MonoBehaviour
 {
     public Transform player;
     public float walkSpeed = 2f;
-    public float detectRange = 5f;
-    public float attackRange = 5f;
+    public float detectRange = 8f;
+    public float attackRange = 8f;
+    public GameObject projectilePrefab;
+    public Transform attackPoint;
+    public AudioSource audioSource;
+    public AudioClip attackSFX;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -65,6 +70,25 @@ public class EnemyBrain : MonoBehaviour
         if (animator != null)
         {
             animator.Play("attack");
+        }
+    }
+    public void FireProjectile()
+    {
+        if (projectilePrefab == null || attackPoint == null) return;
+
+        GameObject obj = Instantiate(projectilePrefab, attackPoint.position, Quaternion.identity);
+
+        float direction = transform.localScale.x > 0 ? 1f : -1f;
+
+        SlimeProjectile projectile = obj.GetComponent<SlimeProjectile>();
+        if (projectile != null)
+        {
+            projectile.Launch(direction);
+        }
+
+        if (audioSource != null && attackSFX != null)
+        {
+            audioSource.PlayOneShot(attackSFX);
         }
     }
 }
