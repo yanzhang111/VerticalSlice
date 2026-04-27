@@ -8,14 +8,19 @@ public class EnemyBrain : MonoBehaviour
 
     [Header("Movement")]
     public float walkSpeed = 2f;
-    public float detectRange = 5f;
-    public float attackRange = 1.5f;
+    public float detectRange = 8f;
+    public float attackRange = 3f;
 
     [Header("Projectile Attack")]
     public GameObject projectilePrefab;
     public Transform attackPoint;
     public AudioSource audioSource;
     public AudioClip attackSFX;
+
+    [Header("Damage")]
+    public int contactDamage = 1;
+    public LayerMask playerLayer;
+    public float damageRadius = 0.8f;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -121,6 +126,22 @@ public class EnemyBrain : MonoBehaviour
         }
     }
 
+    public void DealDamageToPlayer()
+    {
+        if (attackPoint == null) return;
+
+        Collider2D hitPlayer = Physics2D.OverlapCircle(attackPoint.position, damageRadius, playerLayer);
+
+        if (hitPlayer != null)
+        {
+            PlayerHealth playerHealth = hitPlayer.GetComponentInParent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(contactDamage);
+            }
+        }
+    }
+
     public void DestroyEnemy()
     {
         Destroy(gameObject);
@@ -135,5 +156,14 @@ public class EnemyBrain : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, damageRadius);
+        }
     }
 }

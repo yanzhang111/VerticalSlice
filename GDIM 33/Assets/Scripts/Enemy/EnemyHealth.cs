@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 3;
-    private int currentHealth;
-    private EnemyBrain enemyBrain;
+    public int currentHealth;
+
+    public EnemyBrain enemyBrain;
     private Collider2D enemyCollider;
     private Rigidbody2D rb;
+    public EnemyHealthBar healthBar;
 
     void Start()
     {
@@ -17,6 +18,11 @@ public class EnemyHealth : MonoBehaviour
         enemyBrain = GetComponent<EnemyBrain>();
         enemyCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -24,6 +30,11 @@ public class EnemyHealth : MonoBehaviour
         if (enemyBrain != null && enemyBrain.isDead) return;
 
         currentHealth -= damage;
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        }
 
         if (currentHealth <= 0)
         {
