@@ -13,6 +13,12 @@ public class Player : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Attack")]
+    public Transform attackPoint;
+    public float attackRadius = 0.5f;
+    public LayerMask enemyLayer;
+    public int attackDamage = 1;
+
     private Rigidbody2D rb;
     private Animator animator;
     private bool isGrounded;
@@ -65,6 +71,7 @@ public class Player : MonoBehaviour
             if (animator != null && QuestManager.instance != null && QuestManager.instance.attackUnlocked)
             {
                 animator.SetTrigger("attack");
+                Attack();
             }
         }
 
@@ -97,11 +104,36 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
 
+    void Attack()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
+            attackPoint.position,
+            attackRadius,
+            enemyLayer
+        );
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(attackDamage);
+            }
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
         {
+            Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
+
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
         }
     }
 }

@@ -7,7 +7,8 @@ public class NPCInteraction : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
 
-    private bool playerInRange = false;
+    public bool playerInRange = false;
+
     private bool isTalking = false;
     private int dialogueIndex = 0;
 
@@ -28,12 +29,13 @@ public class NPCInteraction : MonoBehaviour
         }
     }
 
-    void Update()
+    public void AdvanceDialogue()
     {
-        if (!playerInRange || !Input.GetKeyDown(KeyCode.E) || QuestManager.instance == null)
+        Debug.Log("AdvanceDialogue called");
+
+        if (!playerInRange || QuestManager.instance == null)
             return;
 
-     
         if (!QuestManager.instance.questStarted)
         {
             if (!isTalking)
@@ -55,6 +57,7 @@ public class NPCInteraction : MonoBehaviour
                     isTalking = false;
                     dialogueIndex = 0;
                     QuestManager.instance.StartQuest();
+
                     if (dialogueText != null)
                     {
                         dialogueText.text = "";
@@ -65,15 +68,14 @@ public class NPCInteraction : MonoBehaviour
             return;
         }
 
-   
         if (!QuestManager.instance.questCompleted && QuestManager.instance.herbCount >= 2)
         {
             QuestManager.instance.CompleteQuest();
-            ShowDialogue("Thank you! I can feel the curse fading. Now I can heal you now!");
+            ShowDialogue("Thank you. I can feel the curse fading. Your full power has returned.");
         }
         else if (!QuestManager.instance.questCompleted)
         {
-            ShowDialogue("Please find two herbs for me. They should be deeper in the forest.");
+            ShowDialogue("Please find 2 herbs for me. They should be deeper in the forest.");
         }
         else
         {
@@ -94,6 +96,7 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            Debug.Log("Player entered NPC range");
         }
     }
 
@@ -104,6 +107,7 @@ public class NPCInteraction : MonoBehaviour
             playerInRange = false;
             isTalking = false;
             dialogueIndex = 0;
+            Debug.Log("Player left NPC range");
 
             if (dialogueText != null)
             {

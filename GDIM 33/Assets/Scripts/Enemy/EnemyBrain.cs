@@ -1,14 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class EnemyBrain : MonoBehaviour
 {
+    [Header("Target")]
     public Transform player;
+
+    [Header("Movement")]
     public float walkSpeed = 2f;
-    public float detectRange = 8f;
-    public float attackRange = 8f;
+    public float detectRange = 5f;
+    public float attackRange = 1.5f;
+
+    [Header("Projectile Attack")]
     public GameObject projectilePrefab;
     public Transform attackPoint;
     public AudioSource audioSource;
@@ -16,6 +19,8 @@ public class EnemyBrain : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+
+    public bool isDead = false;
 
     void Start()
     {
@@ -29,17 +34,32 @@ public class EnemyBrain : MonoBehaviour
         return Vector2.Distance(transform.position, player.position);
     }
 
+    public float GetDetectRange()
+    {
+        return detectRange;
+    }
+
+    public float GetAttackRange()
+    {
+        return attackRange;
+    }
+
+    public bool GetIsDead()
+    {
+        return isDead;
+    }
+
     public void StopMoving()
     {
         if (rb != null)
         {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
+            rb.velocity = Vector2.zero;
         }
     }
 
     public void WalkToPlayer()
     {
-        if (player == null || rb == null) return;
+        if (player == null || rb == null || isDead) return;
 
         float direction = player.position.x > transform.position.x ? 1f : -1f;
         rb.velocity = new Vector2(direction * walkSpeed, rb.velocity.y);
@@ -53,7 +73,7 @@ public class EnemyBrain : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.Play("idle");
+            animator.Play("Base Layer.idle");
         }
     }
 
@@ -61,7 +81,7 @@ public class EnemyBrain : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.Play("walk");
+            animator.Play("Base Layer.walk");
         }
     }
 
@@ -69,9 +89,18 @@ public class EnemyBrain : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.Play("attack");
+            animator.Play("Base Layer.attack");
         }
     }
+
+    public void PlayDie()
+    {
+        if (animator != null)
+        {
+            animator.Play("Base Layer.die");
+        }
+    }
+
     public void FireProjectile()
     {
         if (projectilePrefab == null || attackPoint == null) return;
@@ -90,5 +119,21 @@ public class EnemyBrain : MonoBehaviour
         {
             audioSource.PlayOneShot(attackSFX);
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
+
+    public void DestroyEnemyAfterDelay(float delay)
+    {
+        StartCoroutine(DestroyRoutine(delay));
+    }
+
+    private IEnumerator DestroyRoutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }
