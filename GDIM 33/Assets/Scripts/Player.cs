@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            if (animator != null)
+            if (animator != null && QuestManager.instance != null && QuestManager.instance.attackUnlocked)
             {
                 animator.SetTrigger("attack");
             }

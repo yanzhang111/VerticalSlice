@@ -10,9 +10,9 @@ public class Collectible : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            if (GameManager.instance != null)
+            if (QuestManager.instance != null && QuestManager.instance.questStarted && !QuestManager.instance.questCompleted)
             {
-                GameManager.instance.AddHerb();
+                QuestManager.instance.AddHerb();
                 Destroy(gameObject);
             }
         }
