@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3984269415727614064}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.92, y: 0.47, z: 0}
+  m_LocalPosition: {x: 3.02, y: 0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -270,6 +270,12 @@ MonoBehaviour:
   attackPoint: {fileID: 337859951749835695}
   audioSource: {fileID: 7562237095537912996}
   attackSFX: {fileID: 8300000, guid: ebbed237de04ca44eaab696610ddc5c2, type: 3}
+  contactDamage: 1
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  damageRadius: 0.8
+  attackCooldown: 1
   isDead: 0
 --- !u!82 &7562237095537912996
 AudioSource:
