@@ -35,7 +35,7 @@ Final Devlog goes here.
 
 
 
-2.[Enemy](https://assetstore.unity.com/packages/2d/characters/2d-monster-cute-chibi-demo-pack-unique-skill-animated-prefab-wit-296969)）
+2.[Enemy](https://assetstore.unity.com/packages/2d/characters/2d-monster-cute-chibi-demo-pack-unique-skill-animated-prefab-wit-296969) 
 
 
 
