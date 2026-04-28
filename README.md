@@ -32,7 +32,19 @@ Final Devlog goes here.
 
 ## Open-source assets
 1.[Health Bar](https://assetstore.unity.com/packages/tools/game-toolkits/health-system-lite-health-bar-hitbox-248090)
+
+
+
 2.[Enemy]（[https://assetstore.unity.com/packages/2d/characters/2d-monster-cute-chibi-demo-pack-unique-skill-animated-prefab-wit-296969](https://assetstore.unity.com/packages/2d/characters/2d-monster-cute-chibi-demo-pack-unique-skill-animated-prefab-wit-296969)）
+
+
+
 3.[Platfrom](https://assetstore.unity.com/packages/2d/environments/2d-enchanted-forest-tileset-pack-199589)
+
+
+
 4.[NPC](https://assetstore.unity.com/packages/2d/characters/cute-2d-girl-wizard-155796)
+
+
+
 5.[Player](https://otsoga.itch.io/eleonore)
