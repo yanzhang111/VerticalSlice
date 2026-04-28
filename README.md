@@ -4,6 +4,9 @@
 
 
 2.[break-down](https://docs.google.com/drawings/d/19ndeEQ2fwK5_1Ei4o9wf03d8gsiIuWsXk3kHsQobrTg/edit)
+
+
+
 In my new break-down, I mainly added the state machine, Scripting Graph, and the Unity systems I chose this time: Tilemap and Animation. My old break-down was mostly about the basic systems in my game, such as player movement, attack, enemies, NPC dialogue, and quests. Now I added these new systems too.  
 
 
