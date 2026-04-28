@@ -22,6 +22,10 @@ public class EnemyBrain : MonoBehaviour
     public LayerMask playerLayer;
     public float damageRadius = 0.8f;
 
+    [Header("Attack Cooldown")]
+    public float attackCooldown = 1f;
+    private float lastAttackTime = -999f;
+
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -165,5 +169,19 @@ public class EnemyBrain : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(attackPoint.position, damageRadius);
         }
+    }
+    public bool CanAttack()
+    {
+        return Time.time >= lastAttackTime + attackCooldown;
+    }
+    public void AttackPlayer()
+    {
+        if (!CanAttack()) return;
+
+        lastAttackTime = Time.time;
+
+        PlayAttack();
+        FireProjectile();
+        DealDamageToPlayer();
     }
 }
