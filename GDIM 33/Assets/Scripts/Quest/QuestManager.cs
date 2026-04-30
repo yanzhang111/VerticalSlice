@@ -39,12 +39,13 @@ public class QuestManager : MonoBehaviour
         herbCount++;
         UpdateUI();
     }
-
+    public bool secondAbilityUnlocked = false;
     public void CompleteQuest()
     {
         if (herbCount >= 2)
         {
             questCompleted = true;
+            secondAbilityUnlocked = true;
             UpdateUI();
         }
     }

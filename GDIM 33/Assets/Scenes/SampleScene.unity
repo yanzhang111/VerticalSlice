@@ -723,6 +723,7 @@ MonoBehaviour:
   questCompleted: 0
   itemText: {fileID: 1243039519}
   questText: {fileID: 581666779}
+  secondAbilityUnlocked: 0
 --- !u!4 &273680030
 Transform:
   m_ObjectHideFlags: 0
@@ -4216,6 +4217,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackDamage: 1
+  useSecondAbility: 1
   jumpGroundCheckDelay: 0.15
 --- !u!61 &1871978553
 BoxCollider2D:

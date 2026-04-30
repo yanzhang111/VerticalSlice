@@ -71,7 +71,7 @@ public class NPCInteraction : MonoBehaviour
         if (!QuestManager.instance.questCompleted && QuestManager.instance.herbCount >= 2)
         {
             QuestManager.instance.CompleteQuest();
-            ShowDialogue("Thank you. I can feel the curse fading. Your full power has returned.");
+            ShowDialogue("Thank you. I can feel the curse fading. Your full power has returned.(press F to use Fire Storm)");
         }
         else if (!QuestManager.instance.questCompleted)
         {

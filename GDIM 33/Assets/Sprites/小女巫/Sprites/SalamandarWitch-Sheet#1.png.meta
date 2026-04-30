@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 280
+        width: 120
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecca3e2e96f4b334e92276b84fdca919
+      internalID: 52172125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_1
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 280
+        width: 120
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074884b712b92844f9d831efd4854111
+      internalID: -569892585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_2
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4655c6d236ece144999273b29e874820
+      internalID: 1746256387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_3
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 280
+        width: 160
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4126a5ddeb975f34faa2a6c663b12fe0
+      internalID: -165977201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_5
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a92d4ee00301484880ca76343d00371
+      internalID: 163175935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_6
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5040783fe99aa8141afdcbca7ef124fd
+      internalID: -620941651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_7
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c1a6d4578ee9b4091c395ae8af6f81
+      internalID: -119067675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_8
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6ef0608d92fad48b634003d648b41f
+      internalID: -291928879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_9
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266178284a6443f4fb88a946c21a7080
+      internalID: 67615369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_10
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 282
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61280990a518c334a9b3d0983ffaeed1
+      internalID: 430733797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_11
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce39afbcb055134bbf6adcd23e63cbc
+      internalID: -611052604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_12
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 280
+        width: 162
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990ac88a790689c47a15953a2dd4eaec
+      internalID: -1222874373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_13
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 280
+        width: 162
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08fd82402c179546b749e7fe6b07a51
+      internalID: -1124730510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_14
+      rect:
+        serializedVersion: 2
+        x: 2518
+        y: 280
+        width: 164
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b774ca5be881049a8230b803fa6453
+      internalID: -1521224511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_15
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e78f28610899c46995ce55704d294f
+      internalID: 2104669533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_16
+      rect:
+        serializedVersion: 2
+        x: 2910
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1f48901e4e5834c8cb53d264f91b44
+      internalID: 1262599673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_17
+      rect:
+        serializedVersion: 2
+        x: 3102
+        y: 277
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba38361cd8cbbd4b8579a65a1885d00
+      internalID: 491046040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_18
+      rect:
+        serializedVersion: 2
+        x: 3299
+        y: 276
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf7f6ab48dd29549b4cc812309be6eb
+      internalID: 203435759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_19
+      rect:
+        serializedVersion: 2
+        x: 3490
+        y: 276
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be80bb5d5d1756447839ee3cd7c38fc7
+      internalID: 1547950476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_20
+      rect:
+        serializedVersion: 2
+        x: 3682
+        y: 276
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0167591d20a39c849b67dc9532e6ef59
+      internalID: 1886144084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SalamandarWitch-Sheet#1_21
+      rect:
+        serializedVersion: 2
+        x: 3870
+        y: 280
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1f5a0555806384caf6b879eae5db93
+      internalID: 1457113090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +560,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SalamandarWitch-Sheet#1_0: 52172125
+      SalamandarWitch-Sheet#1_1: -569892585
+      SalamandarWitch-Sheet#1_10: 430733797
+      SalamandarWitch-Sheet#1_11: -611052604
+      SalamandarWitch-Sheet#1_12: -1222874373
+      SalamandarWitch-Sheet#1_13: -1124730510
+      SalamandarWitch-Sheet#1_14: -1521224511
+      SalamandarWitch-Sheet#1_15: 2104669533
+      SalamandarWitch-Sheet#1_16: 1262599673
+      SalamandarWitch-Sheet#1_17: 491046040
+      SalamandarWitch-Sheet#1_18: 203435759
+      SalamandarWitch-Sheet#1_19: 1547950476
+      SalamandarWitch-Sheet#1_2: 1746256387
+      SalamandarWitch-Sheet#1_20: 1886144084
+      SalamandarWitch-Sheet#1_21: 1457113090
+      SalamandarWitch-Sheet#1_3: -165977201
+      SalamandarWitch-Sheet#1_4: -1182877331
+      SalamandarWitch-Sheet#1_5: 163175935
+      SalamandarWitch-Sheet#1_6: -620941651
+      SalamandarWitch-Sheet#1_7: -119067675
+      SalamandarWitch-Sheet#1_8: -291928879
+      SalamandarWitch-Sheet#1_9: 67615369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     public LayerMask enemyLayer;
     public int attackDamage = 1;
 
+    [Header("Second Ability")]
+    public bool useSecondAbility = true;
+
     private Rigidbody2D rb;
     private Animator animator;
     private bool isGrounded;
@@ -72,6 +75,14 @@ public class Player : MonoBehaviour
             {
                 animator.SetTrigger("attack");
                 Attack();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (animator != null && QuestManager.instance != null && QuestManager.instance.secondAbilityUnlocked)
+            {
+                animator.SetTrigger("skill");
             }
         }
 
