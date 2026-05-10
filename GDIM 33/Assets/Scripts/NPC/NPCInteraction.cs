@@ -18,7 +18,7 @@ public class NPCInteraction : MonoBehaviour
         "What? You got lost here and you do not even have the power to protect yourself?",
         "If you want to leave this place, you must defeat the Dark Lord. I am too weak to defeat it, but maybe you can.",
         "I can heal you, but I was cursed by this forest too. I may only be able to restore part of your power for now. If you want to defeat the Dark Lord, you will need all of your strength.",
-        "How about this? Go deep into the forest and find 2 herbs for me. If you break my curse, I can restore all of your power. Then you can defeat the Dark Lord, and we can escape together."
+        "How about this? Go deep into the forest and find 2 herbs for me. If you break my curse, I can restore all of your power. Then you can defeat the Dark Lord, and we can escape together.(Now you can press J to attck)"
     };
 
     void Start()
@@ -71,7 +71,7 @@ public class NPCInteraction : MonoBehaviour
         if (!QuestManager.instance.questCompleted && QuestManager.instance.herbCount >= 2)
         {
             QuestManager.instance.CompleteQuest();
-            ShowDialogue("Thank you. I can feel the curse fading. Your full power has returned.(press F to use Fire Storm)");
+            ShowDialogue("Thank you. I can feel the curse fading. Your full power has returned.(press K to use Fire Storm)");
         }
         else if (!QuestManager.instance.questCompleted)
         {
