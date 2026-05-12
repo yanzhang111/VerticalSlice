@@ -13,17 +13,21 @@ public class Player : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
-    [Header("Attack")]
+    [Header("Basic Attack")]
     public Transform attackPoint;
     public float attackRadius = 0.5f;
     public LayerMask enemyLayer;
     public int attackDamage = 1;
 
-    [Header("Second Ability")]
-    public bool useSecondAbility = true;
+    [Header("Fire Storm")]
+    public float fireStormRadius = 1.5f;
+    public int fireStormDamage = 2;
+    public LayerMask fireStormTargetLayer;
 
     private Rigidbody2D rb;
     private Animator animator;
+    private PlayerHealth playerHealth;
+
     private bool isGrounded;
     private float moveInput;
     private Vector3 originalScale;
@@ -35,11 +39,17 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerHealth = GetComponent<PlayerHealth>();
         originalScale = transform.localScale;
     }
 
     void Update()
     {
+        if (playerHealth != null && playerHealth.isDead)
+        {
+            return;
+        }
+
         moveInput = Input.GetAxisRaw("Horizontal");
 
         bool canCheckGround = Time.time > jumpStartTime + jumpGroundCheckDelay;
@@ -83,6 +93,7 @@ public class Player : MonoBehaviour
             if (animator != null && QuestManager.instance != null && QuestManager.instance.secondAbilityUnlocked)
             {
                 animator.SetTrigger("skill");
+                UseFireStorm();
             }
         }
 
@@ -112,6 +123,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (playerHealth != null && playerHealth.isDead)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
 
@@ -133,6 +150,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    void UseFireStorm()
+    {
+        Collider2D[] hitTargets = Physics2D.OverlapCircleAll(
+            attackPoint.position,
+            fireStormRadius,
+            fireStormTargetLayer
+        );
+
+        foreach (Collider2D target in hitTargets)
+        {
+            EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(fireStormDamage);
+            }
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
@@ -145,6 +180,9 @@ public class Player : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(attackPoint.position, fireStormRadius);
         }
     }
 }
