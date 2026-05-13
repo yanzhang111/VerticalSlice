@@ -11,6 +11,11 @@ public class QuestManager : MonoBehaviour
     public bool questStarted = false;
     public bool attackUnlocked = false;
     public bool questCompleted = false;
+    public bool secondAbilityUnlocked = false;
+
+    public bool bossDefeated = false;
+    public bool talkedToNpcAfterBoss = false;
+    public bool hasKey = false;
 
     public TextMeshProUGUI itemText;
     public TextMeshProUGUI questText;
@@ -39,7 +44,7 @@ public class QuestManager : MonoBehaviour
         herbCount++;
         UpdateUI();
     }
-    public bool secondAbilityUnlocked = false;
+
     public void CompleteQuest()
     {
         if (herbCount >= 2)
@@ -50,11 +55,23 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public void BossDefeated()
+    {
+        bossDefeated = true;
+        UpdateUI();
+    }
+
+    public void TalkToNpcAfterBoss()
+    {
+        talkedToNpcAfterBoss = true;
+        UpdateUI();
+    }
+
     public void UpdateUI()
     {
         if (itemText != null)
         {
-            if (!questStarted)
+            if (!questStarted || questCompleted)
             {
                 itemText.text = "";
             }
@@ -78,9 +95,21 @@ public class QuestManager : MonoBehaviour
             {
                 questText.text = "Return to NPC";
             }
-            else
+            else if (questCompleted && !bossDefeated)
             {
-                questText.text = "Quest Complete";
+                questText.text = "Now! Go defeat the evil Dark Lord!";
+            }
+            else if (bossDefeated && !hasKey)
+            {
+                questText.text = "Pick up the key.";
+            }
+            else if (bossDefeated && hasKey && !talkedToNpcAfterBoss)
+            {
+                questText.text = "Bring the key back to the NPC.";
+            }
+            else if (bossDefeated && talkedToNpcAfterBoss)
+            {
+                questText.text = "Use the key to open the door and escape with her!";
             }
         }
     }

@@ -134,18 +134,24 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
+        Collider2D[] hitTargets = Physics2D.OverlapCircleAll(
             attackPoint.position,
             attackRadius,
             enemyLayer
         );
 
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D target in hitTargets)
         {
-            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(attackDamage);
+            }
+
+            BossHealth bossHealth = target.GetComponent<BossHealth>();
+            if (bossHealth != null)
+            {
+                bossHealth.TakeDamage(attackDamage);
             }
         }
     }
@@ -165,9 +171,14 @@ public class Player : MonoBehaviour
             {
                 enemyHealth.TakeDamage(fireStormDamage);
             }
+
+            BossHealth bossHealth = target.GetComponent<BossHealth>();
+            if (bossHealth != null)
+            {
+                bossHealth.TakeDamage(fireStormDamage);
+            }
         }
     }
-
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)

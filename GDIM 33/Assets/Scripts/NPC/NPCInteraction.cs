@@ -18,7 +18,7 @@ public class NPCInteraction : MonoBehaviour
         "What? You got lost here and you do not even have the power to protect yourself?",
         "If you want to leave this place, you must defeat the Dark Lord. I am too weak to defeat it, but maybe you can.",
         "I can heal you, but I was cursed by this forest too. I may only be able to restore part of your power for now. If you want to defeat the Dark Lord, you will need all of your strength.",
-        "How about this? Go deep into the forest and find 2 herbs for me. If you break my curse, I can restore all of your power. Then you can defeat the Dark Lord, and we can escape together.(Now you can press J to attck)"
+        "How about this? Go deep into the forest and find 2 herbs for me. If you break my curse, I can restore all of your power. Then you can defeat the Dark Lord, and we can escape together."
     };
 
     void Start()
@@ -71,15 +71,24 @@ public class NPCInteraction : MonoBehaviour
         if (!QuestManager.instance.questCompleted && QuestManager.instance.herbCount >= 2)
         {
             QuestManager.instance.CompleteQuest();
-            ShowDialogue("Thank you. I can feel the curse fading. Your full power has returned.(press K to use Fire Storm)");
+            ShowDialogue("Thank you. The curse is gone. Your full power has returned. Now, go defeat the evil Dark Lord!");
         }
         else if (!QuestManager.instance.questCompleted)
         {
             ShowDialogue("Please find 2 herbs for me. They should be deeper in the forest.");
         }
+        else if (QuestManager.instance.questCompleted && !QuestManager.instance.bossDefeated)
+        {
+            ShowDialogue("Go defeat the Dark Lord. Only then can we truly escape.");
+        }
+        else if (QuestManager.instance.bossDefeated && !QuestManager.instance.talkedToNpcAfterBoss)
+        {
+            QuestManager.instance.TalkToNpcAfterBoss();
+            ShowDialogue("You really did it! Oh my gosh, I never thought this would happen! Hurry, go open the door! We can finally go home!");
+        }
         else
         {
-            ShowDialogue("Now go. Defeat the Dark Lord, and let us escape this forest.");
+            ShowDialogue("Please use the key to open the door. We are so close to going home.");
         }
     }
 
