@@ -67,7 +67,27 @@ This state machine is also connected to other systems in my game, It works with 
 
 
 
-2.
+2.I think this activity was helpful. Before I actually started working in Unity, I had already gone through the feature in my head and wrote down the steps I needed to do. So when I opened Unity, I was not completely lost or unsure where to start. I could just follow the steps I wrote and build the feature little by little.
+
+
+
+If I do this kind of break-down again, I think I would make each step more specific. For example, instead of only writing “test the level,” I should write what I need to test, like whether the player can jump across the platforms, whether the enemy placement makes sense, whether the collectibles are too hard to get, and whether the route has any bugs. This would make the break-down feel more like a checklist that I can actually follow while I am working.
+
+
+
+3.In my game, I used a Visual Scripting Graph to call methods written in C#. The clearest example is my NPC dialogue system. The Graph on the NPC first checks whether the player has walked into range and pressed the interact key, and then it calls the AdvanceDialogue() method in NPCInteraction.cs. The actual dialogue progression, quest start, and showing different lines depending on the player’s progress are all handled inside NPCInteraction.cs.
+
+
+
+<img width="2560" height="1320" alt="image" src="https://github.com/user-attachments/assets/bd93f5cf-24d8-441e-be51-1086905718b3" />
+
+
+
+4.The Unity system I want you to grade is my Tilemap system. My whole 2D platformer map is built with Tilemap, including the ground, platform routes, and the level areas the player needs to go through, so you can see it directly when you enter the game scene.
+
+
+
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
