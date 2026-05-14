@@ -25,7 +25,7 @@ This state machine is also connected to other systems in my game, It works with 
 
 
 
-###Step 1: Plan the overall platform level design
+### Step 1: Plan the overall platform level design
 
 1.First, I will look at some other 2D platformer games as references and observe how they arrange platforms, traps, enemies, and rewards.
 
@@ -41,7 +41,7 @@ This state machine is also connected to other systems in my game, It works with 
 
 
 
-###Step 2: Build the basic platform route in Unity
+### Step 2: Build the basic platform route in Unity
 
 1.Based on the design plan from Step 1, I will use Tilemap in Unity to build the main terrain and platform positions first.
 
@@ -57,7 +57,7 @@ This state machine is also connected to other systems in my game, It works with 
 
 
 
-###Step 3: Add decorations and do a full test
+### Step 3: Add decorations and do a full test
 
 1.Based on the level theme, I will add decorations such as background details, ground details, wall decorations, plants, lighting, or other environment objects, so the level does not look like it is only made of basic blocks.
 
