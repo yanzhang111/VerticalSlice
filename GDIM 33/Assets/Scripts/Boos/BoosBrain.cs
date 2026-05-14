@@ -32,6 +32,14 @@ public class BossBrain : MonoBehaviour
     public float deathDelay = 1.5f;
     public Transform keyDropPoint;
 
+    public GameObject phase1ZonePrefab;
+    public GameObject phase2ZonePrefab;
+    public Transform phase1ZonePoint;
+    public Transform phase2ZonePoint1;
+    public Transform phase2ZonePoint2;
+    public float attack5ZoneDuration = 1.2f;
+    public float attack2ZoneDuration = 1.2f;
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -62,6 +70,8 @@ public class BossBrain : MonoBehaviour
                         {
                             animator.Play("Base Layer.attack5");
                         }
+
+                        SpawnPhase1AttackZone();
                     }
                 }
                 else
@@ -130,6 +140,8 @@ public class BossBrain : MonoBehaviour
                 {
                     animator.Play("Base Layer.attack2");
                 }
+
+                SpawnPhase2AttackZones();
 
                 yield return new WaitForSeconds(attack2Wait);
                 yield return new WaitForSeconds(phase2Interval);
@@ -206,5 +218,53 @@ public class BossBrain : MonoBehaviour
     public bool GetIsDead()
     {
         return isDead;
+    }
+
+    public void SpawnPhase1AttackZone()
+    {
+        if (phase1ZonePrefab != null && phase1ZonePoint != null)
+        {
+            GameObject zone = Instantiate(phase1ZonePrefab, phase1ZonePoint.position, Quaternion.identity);
+            BossAttackZone attackZone = zone.GetComponent<BossAttackZone>();
+
+            if (attackZone != null)
+            {
+                attackZone.SetDuration(attack5ZoneDuration);
+            }
+
+            Destroy(zone, attack5ZoneDuration);
+        }
+    }
+
+    public void SpawnPhase2AttackZones()
+    {
+        if (phase2ZonePrefab != null)
+        {
+            if (phase2ZonePoint1 != null)
+            {
+                GameObject zone1 = Instantiate(phase2ZonePrefab, phase2ZonePoint1.position, Quaternion.identity);
+                BossAttackZone attackZone1 = zone1.GetComponent<BossAttackZone>();
+
+                if (attackZone1 != null)
+                {
+                    attackZone1.SetDuration(attack2ZoneDuration);
+                }
+
+                Destroy(zone1, attack2ZoneDuration);
+            }
+
+            if (phase2ZonePoint2 != null)
+            {
+                GameObject zone2 = Instantiate(phase2ZonePrefab, phase2ZonePoint2.position, Quaternion.identity);
+                BossAttackZone attackZone2 = zone2.GetComponent<BossAttackZone>();
+
+                if (attackZone2 != null)
+                {
+                    attackZone2.SetDuration(attack2ZoneDuration);
+                }
+
+                Destroy(zone2, attack2ZoneDuration);
+            }
+        }
     }
 }
