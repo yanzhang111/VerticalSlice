@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public int maxHealth = 20;
+    public int maxHealth = 4;
     public int currentHealth;
 
     public BossBrain bossBrain;
     public float phaseTwoThreshold = 0.5f;
+    public Healthbar healthBar;
 
     void Start()
     {
         currentHealth = maxHealth;
         bossBrain = GetComponent<BossBrain>();
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -27,10 +33,14 @@ public class BossHealth : MonoBehaviour
             currentHealth = 0;
         }
 
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        }
+
         if (bossBrain != null && !bossBrain.phaseTwo && currentHealth <= maxHealth * phaseTwoThreshold)
         {
             bossBrain.EnterPhaseTwo();
-            return;
         }
 
         if (bossBrain != null && bossBrain.phaseTwo && currentHealth <= 0)
