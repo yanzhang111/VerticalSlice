@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     public int fireStormDamage = 2;
     public LayerMask fireStormTargetLayer;
 
+    public float attackLockTime = 0.6f;
+    public float skillLockTime = 1f;
+
     private Rigidbody2D rb;
     private Animator animator;
     private PlayerHealth playerHealth;
@@ -34,6 +37,9 @@ public class Player : MonoBehaviour
 
     private float jumpStartTime;
     public float jumpGroundCheckDelay = 0.15f;
+
+    private bool isAttacking = false;
+    private bool isCastingSkill = false;
 
     void Start()
     {
@@ -50,7 +56,16 @@ public class Player : MonoBehaviour
             return;
         }
 
-        moveInput = Input.GetAxisRaw("Horizontal");
+        bool isBusy = isAttacking || isCastingSkill;
+
+        if (!isBusy)
+        {
+            moveInput = Input.GetAxisRaw("Horizontal");
+        }
+        else
+        {
+            moveInput = 0;
+        }
 
         bool canCheckGround = Time.time > jumpStartTime + jumpGroundCheckDelay;
 
@@ -67,7 +82,7 @@ public class Player : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (!isBusy && Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpStartTime = Time.time;
@@ -79,21 +94,23 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (!isBusy && Input.GetKeyDown(KeyCode.J))
         {
             if (animator != null && QuestManager.instance != null && QuestManager.instance.attackUnlocked)
             {
                 animator.SetTrigger("attack");
                 Attack();
+                StartCoroutine(LockAttack());
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (!isBusy && Input.GetKeyDown(KeyCode.K))
         {
             if (animator != null && QuestManager.instance != null && QuestManager.instance.secondAbilityUnlocked)
             {
                 animator.SetTrigger("skill");
                 UseFireStorm();
+                StartCoroutine(LockSkill());
             }
         }
 
@@ -103,21 +120,24 @@ public class Player : MonoBehaviour
             animator.SetBool("isGrounded", isGrounded);
         }
 
-        if (moveInput > 0)
+        if (!isBusy)
         {
-            transform.localScale = new Vector3(
-                Mathf.Abs(originalScale.x),
-                originalScale.y,
-                originalScale.z
-            );
-        }
-        else if (moveInput < 0)
-        {
-            transform.localScale = new Vector3(
-                -Mathf.Abs(originalScale.x),
-                originalScale.y,
-                originalScale.z
-            );
+            if (moveInput > 0)
+            {
+                transform.localScale = new Vector3(
+                    Mathf.Abs(originalScale.x),
+                    originalScale.y,
+                    originalScale.z
+                );
+            }
+            else if (moveInput < 0)
+            {
+                transform.localScale = new Vector3(
+                    -Mathf.Abs(originalScale.x),
+                    originalScale.y,
+                    originalScale.z
+                );
+            }
         }
     }
 
@@ -129,7 +149,27 @@ public class Player : MonoBehaviour
             return;
         }
 
+        if (isAttacking || isCastingSkill)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            return;
+        }
+
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+    }
+
+    System.Collections.IEnumerator LockAttack()
+    {
+        isAttacking = true;
+        yield return new WaitForSeconds(attackLockTime);
+        isAttacking = false;
+    }
+
+    System.Collections.IEnumerator LockSkill()
+    {
+        isCastingSkill = true;
+        yield return new WaitForSeconds(skillLockTime);
+        isCastingSkill = false;
     }
 
     void Attack()
@@ -179,6 +219,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
