@@ -20,7 +20,54 @@ This state machine is also connected to other systems in my game, It works with 
 
 
 ## Milestone 2 Devlog
-Milestone 2 Devlog goes here.
+1.This Milestone 2 complicating gameplay feature was originally going to be adding my Boss and giving him a second phase. However, I already wrote about that part during the Week 5 in-class activity, so for this devlog I am choosing another feature. My game is a 2D platformer, so I want to write about creating a more complete platform level design. My game is not only about fighting enemies. The player also needs to move, jump, and explore between different areas. In Milestone 1, the player’s basic movement, jumping, and attacking already worked, but the level itself was still pretty simple. So for this Milestone, I wanted to add more platforming challenges.
+
+
+
+
+###Step 1: Plan the overall platform level design
+
+1.First, I will look at some other 2D platformer games as references and observe how they arrange platforms, traps, enemies, and rewards.
+
+2.I will look at more than one reference, so I can compare different level rhythms and design styles.
+
+3.I will draw a rough level sketch on my iPad or on paper, and plan where the collectible items should be placed and which areas can encourage the player to explore.
+
+4.I will plan the enemy placement, such as where normal enemies should go and which areas should not be too difficult.
+
+5.I will think about the flow of the whole level, including where the player should feel challenged or punished, and where the player should receive rewards, so the level does not feel stressful all the time.
+
+6.After that, I should have a complete level design plan.
+
+
+
+###Step 2: Build the basic platform route in Unity
+
+1.Based on the design plan from Step 1, I will use Tilemap in Unity to build the main terrain and platform positions first.
+
+2.I will not add too many decorations at the beginning. The main focus is to make sure the player can move, jump, and pass through this area normally.
+
+3.I will place platforms with different heights and distances based on the sketch, and test whether the player can jump through them smoothly.
+
+4.I will adjust the distance between platforms, so some jumps are not too easy, but also not impossible for the player.
+
+5.I will place the basic collectible items and enemy positions first, and make sure they do not block the player’s main route.
+
+6.I will test the full route from the start of the level to the end, and make sure the player can finish the whole platform area without any bugs.
+
+
+
+###Step 3: Add decorations and do a full test
+
+1.Based on the level theme, I will add decorations such as background details, ground details, wall decorations, plants, lighting, or other environment objects, so the level does not look like it is only made of basic blocks.
+
+2.When I add decorations, I need to make sure they do not affect the player’s judgment. Dangerous areas and platforms that the player can stand on should be clear, so the player can tell where they can go and where they might get hurt.
+
+3.Finally, I will test the whole level from start to finish. I need to make sure the player can complete the route, the enemies can create pressure, the rewards can be collected, and the decorations do not block the player or affect the controls.
+
+
+
+2.
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
@@ -48,3 +95,7 @@ Final Devlog goes here.
 
 
 5.[Player](https://otsoga.itch.io/eleonore)
+
+
+
+6.[Boos](https://papoycore.itch.io/fantazy-30)
