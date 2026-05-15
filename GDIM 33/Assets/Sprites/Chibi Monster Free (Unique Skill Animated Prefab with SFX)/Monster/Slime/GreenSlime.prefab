@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08075d3f46bae042a796621632f180b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 2
   currentHealth: 0
   enemyBrain: {fileID: 4988006580499883547}
   healthBar: {fileID: 3110590667258671514}
