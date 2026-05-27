@@ -370,7 +370,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fire Storm Cast
-  m_Speed: 0.17
+  m_Speed: 0.27
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6493674315255401041}
@@ -472,7 +472,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack
-  m_Speed: 0.3
+  m_Speed: 0.45
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4115882788413430764}
