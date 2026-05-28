@@ -7,9 +7,8 @@ public class EndingDialogue : MonoBehaviour
 {
     public GameObject ending;
     public TextMeshProUGUI endingText;
-
+    public GameObject healthbarUI;
     public string[] dialogueLines;
-
     private int currentLine = 0;
     private bool isEndingActive = false;
 
@@ -27,8 +26,8 @@ public class EndingDialogue : MonoBehaviour
     }
 
     void Update()
-    { 
-
+    {
+        
         if (isEndingActive && Input.GetKeyDown(KeyCode.E))
         {
             currentLine++;
@@ -46,6 +45,11 @@ public class EndingDialogue : MonoBehaviour
 
     public void StartEnding()
     {
+        if (healthbarUI != null)
+        {
+            healthbarUI.SetActive(false);
+        }
+
         if (ending != null)
         {
             ending.SetActive(true);
