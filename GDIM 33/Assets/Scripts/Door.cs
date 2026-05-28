@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject winPanel;
     public Player player;
+    public EndingDialogue endingDialogue;
 
     private bool playerInRange = false;
     private bool isOpened = false;
@@ -52,21 +53,20 @@ public class Door : MonoBehaviour
 
         if (dialogueText != null)
         {
-            dialogueText.text = "The door is open! You escaped!";
+            dialogueText.text = "";
         }
 
         if (winPanel != null)
         {
-            winPanel.SetActive(true);
+            winPanel.SetActive(false);
         }
 
-        StartCoroutine(EndGameRoutine());
-    }
+        gameObject.SetActive(false);
 
-    IEnumerator EndGameRoutine()
-    {
-        yield return new WaitForSeconds(1.5f);
-        Time.timeScale = 0f;
+        if (endingDialogue != null)
+        {
+            endingDialogue.StartEnding();
+        }
     }
 
     void ShowTemporaryMessage(string message, float duration)
