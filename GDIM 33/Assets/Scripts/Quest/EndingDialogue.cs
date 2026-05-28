@@ -27,11 +27,7 @@ public class EndingDialogue : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StartEnding();
-        }
+    { 
 
         if (isEndingActive && Input.GetKeyDown(KeyCode.E))
         {
