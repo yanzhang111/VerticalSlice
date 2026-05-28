@@ -91,7 +91,38 @@ If I do this kind of break-down again, I think I would make each step more speci
 
 
 ## Milestone 3 Devlog
-Milestone 3 Devlog goes here.
+1.My ShaderGraph is mainly used on important objects in my game, like the key that drops after the boss dies, and the door that the player needs to reach at the end. During playtesting, some players said the items were a little hard to find, so I wanted to make these important objects stand out more. After the player defeats the boss, the key drops, and the door is also the next goal the player needs to notice. So I added a golden glowing effect to both of them.
+
+
+
+The shader basically adds a moving shine texture on top of the original sprite. I use MainTex to read the object’s original image, and I use ShineTex for the glowing part. Then I use an Add node to combine the original image with the shine texture, so the object looks brighter. To make it not just a normal white shine, I added ShineColor and used a Multiply node to turn the ShineTex into a gold color. This makes it look more like an important item or a goal marker.
+
+
+
+To make the light move instead of staying still, I used Time, Fraction, and UV nodes. Time keeps changing, and Fraction makes the value loop between 0 and 1. Then I add that value to the UV of ShineTex, so the shine texture moves across the object’s surface. I also added Sine and PulseStrength to make the glow slightly flicker, so it does not stay at the exact same brightness all the time.
+
+
+
+In the game, this ShaderGraph effect can be seen on the key that drops after the boss is defeated, and it can also be seen on the door.
+
+
+
+<img width="2424" height="1240" alt="image" src="https://github.com/user-attachments/assets/c7be7d7b-61da-4c17-8def-0e18d7741e1a" />
+
+
+
+2.Based on the playtesting feedback and the feedback from Milestone 2, I made several adjustments to my game. First, some players felt that the character’s attack animation was a little too long, so I adjusted the attack speed and made the combat feel a little faster. I also changed the size of the player’s collider, because it was a bit too large before, and the player could get stuck more easily while moving or jumping.
+
+
+
+
+Besides that, I also adjusted some of the platform positions and distances, so the platforming sections are easier to jump through now. For the issue where the player could get stuck on walls, I added many invisible walls in the map. This helps stop the player from going into places they are not supposed to go, or getting stuck near the edges of the map. Another piece of feedback was that pressing K at the beginning could not use the fire tornado ability. After I checked it again, I found that this was not a bug. The fire tornado ability is supposed to unlock later in the game, so it is normal that the player cannot use it at the beginning.
+
+
+
+3.Since the last Milestone, I added a real ending to my game, and I also added more story content to make the whole game feel more complete. Now, after the player finishes the main task, they will enter the final ending part. The ending uses an image and dialogue to close the game, so the player can clearly know that they finished the game. It also gives the story a more clear ending.
+
+
 ## Milestone 4 Devlog
 Milestone 4 Devlog goes here.
 ## Final Devlog
