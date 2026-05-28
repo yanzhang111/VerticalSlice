@@ -120,7 +120,7 @@ Besides that, I also adjusted some of the platform positions and distances, so t
 
 
 
-3.Since the last Milestone, I added a real ending to my game, and I also added more story content to make the whole game feel more complete. Now, after the player finishes the main task, they will enter the final ending part. The ending uses an image and dialogue to close the game, so the player can clearly know that they finished the game. It also gives the story a more clear ending.
+3.Since the last Milestone, I added a real ending to my game, and I also added more story content to make the whole game feel more complete. Now, after the player finishes the main task, they will enter the final ending part. The ending uses an image and dialogue to close the game, so the player can clearly know that they finished the game. It also gives the story a clearer ending. I also improved some of the art in the game, including redrawing the door to make it look better and fit the game more.
 
 
 ## Milestone 4 Devlog
