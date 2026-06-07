@@ -6028,7 +6028,7 @@ Tilemap:
       - {fileID: 21300000, guid: 0b69fefd5ea02fb4e88ef334627eac79, type: 3}
       - {fileID: 21300000, guid: 07f79c53818c41743b651acce5015d09, type: 3}
       - {fileID: 21300000, guid: a2e19f0119ea63b4c984378a9ce4d02e, type: 3}
-      m_AnimationSpeed: 30.000002
+      m_AnimationSpeed: 30
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -22, y: -57, z: 0}
@@ -6513,7 +6513,7 @@ Tilemap:
       - {fileID: 21300000, guid: dcbdca506b4ddba429d426fdc2135afb, type: 3}
       - {fileID: 21300000, guid: 1acfe91e2e13b4648ba06462c7ad0472, type: 3}
       - {fileID: 21300000, guid: 6df7c4e76b682284b8d332c6b920a3a1, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 19, y: -57, z: 0}
@@ -6801,7 +6801,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2c6a2bca81b7bb641be13e0331588e5e, type: 3}
       - {fileID: 21300000, guid: de76eb305de1f6640ad2c3ca6f25035a, type: 3}
       - {fileID: 21300000, guid: 3f1a94e88bc21d3448e4e97a664fe562, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 54, y: -56, z: 0}
@@ -6965,7 +6965,7 @@ Tilemap:
       - {fileID: 21300000, guid: dcbdca506b4ddba429d426fdc2135afb, type: 3}
       - {fileID: 21300000, guid: 1acfe91e2e13b4648ba06462c7ad0472, type: 3}
       - {fileID: 21300000, guid: 6df7c4e76b682284b8d332c6b920a3a1, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 61, y: -54, z: 0}
@@ -7538,7 +7538,7 @@ Tilemap:
       - {fileID: 21300000, guid: 8dd7f6d0dd5a2bd44bc387820df270d5, type: 3}
       - {fileID: 21300000, guid: 84d32ea50ecde2a448e2e84ceb7989cf, type: 3}
       - {fileID: 21300000, guid: c144f597d7d4ea74d9ea23749d9b0038, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -25, y: -47, z: 0}
@@ -8157,7 +8157,7 @@ Tilemap:
       - {fileID: 21300000, guid: dcbdca506b4ddba429d426fdc2135afb, type: 3}
       - {fileID: 21300000, guid: 1acfe91e2e13b4648ba06462c7ad0472, type: 3}
       - {fileID: 21300000, guid: 6df7c4e76b682284b8d332c6b920a3a1, type: 3}
-      m_AnimationSpeed: 30.000002
+      m_AnimationSpeed: 30
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -7, y: -41, z: 0}
@@ -8351,7 +8351,7 @@ Tilemap:
       - {fileID: 21300000, guid: dcbdca506b4ddba429d426fdc2135afb, type: 3}
       - {fileID: 21300000, guid: 1acfe91e2e13b4648ba06462c7ad0472, type: 3}
       - {fileID: 21300000, guid: 6df7c4e76b682284b8d332c6b920a3a1, type: 3}
-      m_AnimationSpeed: 30.000002
+      m_AnimationSpeed: 30
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 73, y: -41, z: 0}
@@ -10427,7 +10427,7 @@ Tilemap:
       - {fileID: 21300000, guid: 7aafffeb5549a8e4783b0b47a26548d7, type: 3}
       - {fileID: 21300000, guid: 734bfb3c415def94ebfe519e28d6c2ac, type: 3}
       - {fileID: 21300000, guid: b6182edc3e357aa40820cf55bace86d7, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 14, y: -20, z: 0}
@@ -11157,7 +11157,7 @@ Tilemap:
       - {fileID: 21300000, guid: 50430dd180ed37246a94cc74f52d40bd, type: 3}
       - {fileID: 21300000, guid: 5a445483cbbdd0d4494c3756fd195f23, type: 3}
       - {fileID: 21300000, guid: cc271521a0b607e45a9ec2937968adc7, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 38, y: -20, z: 0}
@@ -11254,7 +11254,7 @@ Tilemap:
       - {fileID: 21300000, guid: 50430dd180ed37246a94cc74f52d40bd, type: 3}
       - {fileID: 21300000, guid: 5a445483cbbdd0d4494c3756fd195f23, type: 3}
       - {fileID: 21300000, guid: cc271521a0b607e45a9ec2937968adc7, type: 3}
-      m_AnimationSpeed: 30.000002
+      m_AnimationSpeed: 30
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 42, y: -20, z: 0}
@@ -21217,7 +21217,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.044900715, y: -3.4469972}
+  m_Offset: {x: -0.021470308, y: -2.6198862}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -21228,7 +21228,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9679004, y: 1.720005}
+  m_Size: {x: 3.9368649, y: 3.2324414}
   m_EdgeRadius: 0
 --- !u!114 &1203856517
 MonoBehaviour:

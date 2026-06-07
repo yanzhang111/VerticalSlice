@@ -155,6 +155,11 @@ public class BossBrain : MonoBehaviour
 
         isDead = true;
 
+        if (BossMusicTrigger.bossDefeated == false)
+        {
+            BossMusicTrigger.StopBossMusicForever();
+        }
+
         if (phaseOneRoutine != null)
         {
             StopCoroutine(phaseOneRoutine);
