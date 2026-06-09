@@ -31,13 +31,22 @@ public class Door : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !isOpened)
         {
-            if (QuestManager.instance != null && QuestManager.instance.hasKey && QuestManager.instance.talkedToNpcAfterBoss)
+            if (QuestManager.instance == null)
             {
-                OpenDoor();
+                return;
+            }
+
+            if (!QuestManager.instance.hasKey)
+            {
+                ShowTemporaryMessage("The door is locked. I need the key first.", 2f);
+            }
+            else if (!QuestManager.instance.talkedToNpcAfterBoss)
+            {
+                ShowTemporaryMessage("I should talk to the her first.", 2f);
             }
             else
             {
-                ShowTemporaryMessage("The door is locked. I need the key first.", 2f);
+                OpenDoor();
             }
         }
     }
