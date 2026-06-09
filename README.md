@@ -125,7 +125,8 @@ Besides that, I also adjusted some of the platform positions and distances, so t
 
 
 ## Final Devlog
-1.My core gameplay loop is exploration, platforming, combat, quest progress, and then reaching the ending. At the beginning, the player explores the forest area and finds a locked door. Then the player needs to talk to the NPC, follow the quest to collect herbs, defeat enemies, unlock a stronger attack, and fight the boss. After defeating the boss, the player gets the key and returns to the door to enter the ending.
+### Question 1
+  My core gameplay loop is exploration, platforming, combat, quest progress, and then reaching the ending. At the beginning, the player explores the forest area and finds a locked door. Then the player needs to talk to the NPC, follow the quest to collect herbs, defeat enemies, unlock a stronger attack, and fight the boss. After defeating the boss, the player gets the key and returns to the door to enter the ending.
 
 
 
@@ -137,7 +138,8 @@ Even though this version is not a full game yet, it still shows what the final g
 
 
 
-2.In the game, this rendering effect makes the door show a golden glow in a specific situation. The door only starts glowing after the player defeats the boss, gets the key, and then gets close to the door. If the player does not have the key yet, the door does not show the effect.
+### Question 2
+In the game, this rendering effect makes the door show a golden glow in a specific situation. The door only starts glowing after the player defeats the boss, gets the key, and then gets close to the door. If the player does not have the key yet, the door does not show the effect.
 
 
 
@@ -151,7 +153,7 @@ Relevant C# file: KeyItem.cs — this script is attached to the door and control
 
 
 
-### 3
+### Question 3
 1.
 
 ## Open-source assets
