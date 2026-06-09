@@ -123,12 +123,38 @@ Besides that, I also adjusted some of the platform positions and distances, so t
 3.Since the last Milestone, I added a real ending to my game, and I also added more story content to make the whole game feel more complete. Now, after the player finishes the main task, they will enter the final ending part. The ending uses an image and dialogue to close the game, so the player can clearly know that they finished the game. It also gives the story a clearer ending. I also improved some of the art in the game, including redrawing the door to make it look better and fit the game more.
 
 
-## Milestone 4 Devlog
-Milestone 4 Devlog goes here.
+
 ## Final Devlog
-Final Devlog goes here.
+### Question 1
+  My core gameplay loop is exploration, platforming, combat, quest progress, and then reaching the ending. At the beginning, the player explores the forest area and finds a locked door. Then the player needs to talk to the NPC, follow the quest to collect herbs, defeat enemies, unlock a stronger attack, and fight the boss. After defeating the boss, the player gets the key and returns to the door to enter the ending.
 
 
+
+The game now includes most of the content I planned. It has one complete main level, with exploration, platforming, combat, quest progress, and an ending. This connects to my original Vertical Slice plan. I wanted to make a 2D platformer with a Metroidvania feeling, like Hollow Knight. The main idea is open exploration, but the player still needs to unlock certain abilities and return to key places to keep moving forward.
+
+
+
+Even though this version is not a full game yet, it still shows what the final game could feel like. The player can explore the map, talk to the NPC, finish quests, and get new abilities. They also need those abilities to defeat stronger enemies. After getting an important item, they return to an earlier area and continue the game. These parts show the most important ideas of the full game, like Metroidvania-style exploration, returning to old areas after unlocking abilities, platforming challenges, and combat growth. This Vertical Slice is like a smaller version of the full game, so the player can already feel the basic gameplay loop and pacing.
+
+
+
+### Question 2
+In the game, this rendering effect makes the door show a golden glow in a specific situation. The door only starts glowing after the player defeats the boss, gets the key, and then gets close to the door. If the player does not have the key yet, the door does not show the effect.
+
+
+
+
+This effect is mainly controlled by code. The door object has the KeyItem.cs script attached to it. This script checks the interaction between the player and the door. When the player enters the trigger area around the door, OnTriggerEnter2D() is called. The script then checks the value of QuestManager.instance.hasKey to see if the player already has the key. If the condition is true, the script gets the door’s SpriteRenderer component and changes its material from the normal material to the glow material that uses my ShaderGraph effect. This makes the door show the golden glow. When the player leaves the trigger area, OnTriggerExit2D() changes the material back to the normal material. In this way, the code controls the rendering effect based on the player’s position and quest progress, instead of letting the glow effect always stay on in the scene.
+
+
+
+
+Relevant C# file: KeyItem.cs — this script is attached to the door and controls the material switch between the normal door material and the ShaderGraph glow material.
+
+
+
+### Question 3
+1.
 
 ## Open-source assets
 1.[Health Bar](https://assetstore.unity.com/packages/tools/game-toolkits/health-system-lite-health-bar-hitbox-248090)
@@ -152,3 +178,10 @@ Final Devlog goes here.
 
 
 6.[Boos](https://papoycore.itch.io/fantazy-30)
+
+
+
+7.[BGM](https://assetstore.unity.com/packages/audio/music/orchestral/gomesda-cozy-spring-free-orchestral-mini-pack-377670)
+
+
+8.[BGM](https://assetstore.unity.com/packages/audio/music/lushvalleysound-fantasy-bgm-free-pack-vol-01-317527)
