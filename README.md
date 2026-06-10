@@ -154,7 +154,29 @@ Relevant C# file: KeyItem.cs — this script is attached to the door and control
 
 
 ### Question 3
-1.
+I think the project breakdown method that works better for me now is starting from an initial idea, and then slowly turning it into something that I can actually make. For example, at first I might only have a big idea: I want to make a 2D platformer with a strong sense of exploration, kind of like a Metroidvania game. But that idea is too big to start making directly. So I need to turn it into a more specific game concept first. I need to think about what the player will mainly do in the game, what the core experience is, and what the player will go through from the beginning to the end.
+
+
+
+Before I start making the game, I think writing something like a pitch document or a Vertical Slice plan is very important. This kind of document helps me organize the ideas in my head. For example, I can write down the genre, core gameplay, gameplay loop, main content, what features I need to make, and what features I should leave out for now. In my Vertical Slice proposal, I first wrote that I wanted to make a 2D platformer. Then I broke the flow down into steps, like finding the locked door, talking to the NPC, collecting herbs, unlocking abilities, fighting the boss, getting the key, and escaping through the door. After writing it out, the project was no longer just a vague idea. It became a much clearer plan.
+
+
+
+After that, I think I can use a bubble diagram to break down the project more. For me, a bubble diagram is useful in the early planning stage, because it helps me see the relationships between different systems. For example, the NPC is not just a single character. It connects to the quest system, herb collection, ability unlocks, and the boss fight later. The boss is also not separate from the rest of the game. It connects to combat, the health system, the key drop, the door, and the ending. After drawing these relationships out, I can understand which systems need to work together. I can also see which features cannot just work by themselves.
+
+
+
+When I actually start making the game, I would use a task step breakdown. This means I would first split the project into several big tasks. Then I would break each big task into smaller tasks, and then break those down into steps that I can finish one by one. For example, “make the boss” is too big as one task, so I would split it into boss health, attack range, phase two, death animation, key drop, and boss music switching. “Make the NPC quest” also cannot just be written as NPC dialogue. It needs a trigger area, dialogue text, quest states, herb collection, ability unlocks, and UI updates. After breaking things down this way, I will not feel lost in Unity. I can just follow the smaller tasks and finish them one by one.
+
+
+
+Breaking a large project into small steps also helps me understand the scope better. Many features look simple at first, but after breaking them down, I can see that they actually have many details. If I do not break things down, I may underestimate the amount of work. I may also realize too late that one system does not connect well with another system. In this Vertical Slice project, I felt this most clearly with the boss and the level design. At first, the boss looked like just one enemy. But when I actually made it, it needed a health system, attack range, phase two, death animation, key drop, and music switching. The platforming level was similar. It was not finished just by drawing the map. I also had to keep testing jump distance, the player collider, wall-stuck issues, and whether the route was clear. At first, I thought the platforming parts would be very easy to make, but I was still adjusting them until the final version. I did not expect that at the beginning.
+
+
+
+So if I work on another project in the future, I will keep using this process. Before I start making it, I will first decide the core gameplay and the smallest playable version. Then I will use a bubble diagram to see how the systems connect, and use a task breakdown to plan the specific tasks. This way, I can control the scope better. It can also help me avoid having a good idea in my head, but feeling messy when I actually start making it.
+
+
 
 ## Open-source assets
 1.[Health Bar](https://assetstore.unity.com/packages/tools/game-toolkits/health-system-lite-health-bar-hitbox-248090)
